@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mateshwari Industries • Authentic Sojat Henna & Essential Oils</title>
+  <meta name="description" content="Official website of Mateshwari Industries - Authentic Sojat Mehandi, Herbal Hair Henna and Pure Essential Oils. Direct factory pricing with WhatsApp ordering.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              300: '#FDE047',
+              400: '#FACC15',
+              500: '#EAB308',
+              600: '#CA8A04',
+              700: '#A16207',
+              800: '#854D0E',
+              900: '#713F12'
+            },
+            royalGreen: {
+              700: '#065F46',
+              800: '#064E3B',
+              900: '#022C22',
+              950: '#011c16'
+            }
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #0b1510;
+      color: #f3f4f6;
+    }
+    .font-royal {
+      font-family: 'Cinzel', serif;
+    }
+    .gold-green-gradient {
+      background: linear-gradient(135deg, #A16207 0%, #CA8A04 25%, #065F46 75%, #064E3B 100%);
+    }
+    .gold-text-gradient {
+      background: linear-gradient(135deg, #FDE047 0%, #EAB308 50%, #854D0E 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-border-glow {
+      box-shadow: 0 0 25px rgba(234, 179, 8, 0.25);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-stone-950 text-stone-100 antialiased selection:bg-amber-500 selection:text-stone-950">
+
+  <!-- Top Golden-Green Announcement Bar -->
+  <div class="bg-gradient-to-r from-amber-700 via-yellow-600 to-emerald-800 text-stone-950 text-xs font-bold py-2 px-4 shadow-md text-center flex items-center justify-between">
+    <div class="hidden sm:block text-[11px] font-extrabold uppercase tracking-widest text-amber-950">
+      📍 Sojat City, Rajasthan
+    </div>
+    <div class="flex-1 text-center font-bold tracking-wide text-amber-950" id="announcement-banner">
+      🌿 100% Organic Sojat Henna & Essential Oils • Direct Factory Dispatch • Call / WhatsApp: +91 98765 43210
+    </div>
+    <div class="flex items-center gap-2">
+      <button onclick="openNotificationModal()" class="relative bg-amber-900/20 hover:bg-amber-900/30 text-amber-950 px-2 py-0.5 rounded-full text-xs font-extrabold flex items-center gap-1 transition">
+        🔔 Daily Alerts <span id="notification-badge" class="bg-emerald-700 text-white rounded-full w-4 h-4 text-[10px] flex items-center justify-center">1</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Luxury Header -->
+  <header class="sticky top-0 z-40 bg-stone-900/90 backdrop-blur-md border-b border-amber-500/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo / Identity -->
+      <div class="flex items-center gap-3 cursor-pointer" onclick="resetFilters()">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-400 via-yellow-500 to-emerald-700 p-0.5 shadow-lg flex items-center justify-center">
+          <div class="w-full h-full bg-stone-950 rounded-2xl flex items-center justify-center text-amber-400 font-royal font-black text-xl">
+            MI
+          </div>
+        </div>
+        <div>
+          <h1 class="text-lg sm:text-2xl font-black tracking-tight font-royal gold-text-gradient uppercase leading-none">
+            Mateshwari Industries
+          </h1>
+          <p class="text-[11px] text-emerald-400 font-semibold tracking-wider uppercase mt-1">
+            Authentic Sojat Mehandi & Essential Oils
+          </p>
+        </div>
+      </div>
+
+      <!-- Search Input Desktop -->
+      <div class="hidden md:flex flex-1 max-w-md mx-4">
+        <div class="relative w-full">
+          <input 
+            type="text" 
+            id="search-input" 
+            placeholder="Search Sojat Henna, Eucalyptus Oil, Cones..."
+            oninput="handleSearch(this.value)"
+            class="w-full bg-stone-800/80 border border-amber-500/40 rounded-full py-2 pl-4 pr-10 text-xs sm:text-sm text-stone-200 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-400"
+          >
+          <span class="absolute right-3.5 top-2.5 text-amber-400">🔍</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons (Cart, Order Track, Admin Login) -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Order Tracking Button -->
+        <button onclick="openTrackOrderModal()" class="hidden sm:flex items-center gap-1.5 px-3 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 border border-amber-500/30 text-amber-300 text-xs font-bold transition">
+          📦 Track Order
+        </button>
+
+        <!-- Admin Only Button -->
+        <button onclick="openAdminModal()" class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-gradient-to-r from-amber-600/20 to-emerald-800/20 hover:from-amber-600/30 hover:to-emerald-800/30 border border-amber-500/40 text-amber-300 text-xs font-bold transition">
+          🔐 Seller Admin
+        </button>
+
+        <!-- Cart Button -->
+        <button onclick="openCartDrawer()" class="relative flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-stone-950 font-black text-xs sm:text-sm shadow-md transition transform active:scale-95">
+          🛒 Cart
+          <span id="cart-counter" class="bg-stone-950 text-amber-400 px-2 py-0.5 rounded-full text-xs font-mono">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Search Input Bar -->
+  <div class="md:hidden px-4 py-3 bg-stone-900 border-b border-amber-500/20">
+    <div class="relative w-full">
+      <input 
+        type="text" 
+        id="mobile-search-input" 
+        placeholder="Search Sojat Mehandi, Cones, Oils..."
+        oninput="handleSearch(this.value)"
+        class="w-full bg-stone-800 border border-amber-500/40 rounded-full py-2 pl-4 pr-10 text-xs text-stone-200 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500"
+      >
+      <span class="absolute right-3.5 top-2.5 text-amber-400 text-xs">🔍</span>
+    </div>
+  </div>
+
+  <!-- Hero Banner with Rich Golden & Deep Green Blend -->
+  <section class="relative overflow-hidden py-12 sm:py-16 bg-gradient-to-br from-stone-950 via-stone-900 to-emerald-950 border-b border-amber-500/30">
+    <div class="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#eab308_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+      
+      <div class="max-w-2xl text-center md:text-left">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-300 text-xs font-bold mb-4 uppercase tracking-widest">
+          👑 Premium Rajasthani Export Quality
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-black font-royal leading-tight gold-text-gradient mb-4">
+          World-Famous Sojat Henna & Pure Essential Oils
+        </h2>
+        <p class="text-sm sm:text-base text-stone-300 mb-6 leading-relaxed">
+          Triple-cloth sifted body art mehandi powder, Nilgiri darkening eucalyptus oils, and handcrafted bridal cones directly from Rajasthan's henna capital with WhatsApp order dispatch.
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center md:justify-start gap-4">
+          <a href="#catalog" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-500 to-emerald-600 hover:from-amber-600 hover:to-emerald-700 text-stone-950 font-black text-sm shadow-xl flex items-center gap-2 transform active:scale-95 transition">
+            🌿 Explore Catalog
+          </a>
+          <button onclick="openWholesaleQuote()" class="px-6 py-3 rounded-2xl bg-stone-900 hover:bg-stone-800 border border-amber-400/50 text-amber-300 font-bold text-sm flex items-center gap-2 transition">
+            📦 Bulk & Wholesale Quotes
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Trust Badges Box -->
+      <div class="w-full md:w-80 bg-stone-900/80 border border-amber-500/40 rounded-3xl p-6 shadow-2xl backdrop-blur-sm">
+        <h3 class="text-xs font-black uppercase tracking-wider text-amber-400 mb-4 pb-2 border-b border-amber-500/20">
+          Why Mateshwari Industries?
+        </h3>
+        <ul class="space-y-3 text-xs text-stone-300 font-medium">
+          <li class="flex items-center gap-2.5">
+            <span class="text-emerald-400 font-bold">✔</span> 100% Pure Lawsonia Inermis (No PPD/Chemicals)
+          </li>
+          <li class="flex items-center gap-2.5">
+            <span class="text-emerald-400 font-bold">✔</span> Direct Factory Wholesale Rates in Rajasthan
+          </li>
+          <li class="flex items-center gap-2.5">
+            <span class="text-emerald-400 font-bold">✔</span> High Lawsone Pigment for Rich Dark Stains
+          </li>
+          <li class="flex items-center gap-2.5">
+            <span class="text-emerald-400 font-bold">✔</span> Instant WhatsApp Confirmation & Tracking
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Categories Filter Bar -->
+  <section id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <div class="flex items-center justify-between mb-4">
+      <div>
+        <h3 class="text-xl sm:text-2xl font-black font-royal gold-text-gradient">Products Catalog</h3>
+        <p class="text-xs text-stone-400">Select category or filter authentic products</p>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-stone-400">
+        <span>Sort by:</span>
+        <select id="sort-select" onchange="handleSort(this.value)" class="bg-stone-800 border border-amber-500/30 rounded-lg px-2.5 py-1 text-xs text-amber-200 focus:outline-none">
+          <option value="featured">Featured</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="discount">Top Discount</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Category Pills -->
+    <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="categories-container">
+      <!-- Injected by JS -->
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 w-full">
+    <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      <!-- Injected by JS -->
+    </div>
+
+    <div id="empty-state" class="hidden text-center py-16">
+      <p class="text-3xl mb-2">🌿</p>
+      <h4 class="text-lg font-bold text-amber-400">No products found</h4>
+      <p class="text-xs text-stone-400 mt-1">Try another keyword or reset the category filters.</p>
+      <button onclick="resetFilters()" class="mt-4 px-4 py-2 rounded-xl bg-amber-500 text-stone-950 font-bold text-xs">Reset All Filters</button>
+    </div>
+  </main>
+
+  <!-- Daily Notification Modal -->
+  <div id="notification-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    <div class="bg-stone-900 border border-amber-500/50 rounded-3xl max-w-md w-full p-6 shadow-2xl relative">
+      <button onclick="closeNotificationModal()" class="absolute top-4 right-4 text-stone-400 hover:text-white text-lg font-bold">✕</button>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl">🔔</div>
+        <div>
+          <h3 class="text-base font-bold text-amber-300 font-royal">Daily Store Notifications</h3>
+          <p class="text-[11px] text-stone-400">Fresh Sojat updates & daily farmer deals</p>
+        </div>
+      </div>
+      <div class="space-y-3" id="notifications-list">
+        <!-- Rendered by JS -->
+      </div>
+      <button onclick="closeNotificationModal()" class="mt-5 w-full py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 text-stone-950 font-black text-xs">
+        Got It
+      </button>
+    </div>
+  </div>
+
+  <!-- Cart Drawer / Modal -->
+  <div id="cart-drawer" class="hidden fixed inset-0 z-50 overflow-hidden bg-black/75 backdrop-blur-sm">
+    <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+      <div class="w-screen max-w-md bg-stone-900 border-l border-amber-500/30 flex flex-col justify-between shadow-2xl">
+        
+        <!-- Cart Header -->
+        <div class="p-6 border-b border-stone-800 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="text-xl">🛒</span>
+            <h3 class="text-lg font-black font-royal text-amber-400">Your Shopping Cart</h3>
+          </div>
+          <button onclick="closeCartDrawer()" class="text-stone-400 hover:text-white text-lg font-bold">✕</button>
+        </div>
+
+        <!-- Cart Items -->
+        <div class="flex-1 overflow-y-auto p-6 space-y-4" id="cart-items-container">
+          <!-- Rendered by JS -->
+        </div>
+
+        <!-- Cart Footer -->
+        <div class="p-6 border-t border-stone-800 bg-stone-950 space-y-3">
+          <div class="flex items-center justify-between text-xs text-stone-400">
+            <span>Subtotal</span>
+            <span id="cart-subtotal" class="font-bold text-stone-200">₹0</span>
+          </div>
+          <div class="flex items-center justify-between text-xs text-emerald-400">
+            <span>Delivery</span>
+            <span id="cart-delivery" class="font-bold">Free above ₹799</span>
+          </div>
+          <div class="flex items-center justify-between text-sm sm:text-base font-black text-amber-300 pt-2 border-t border-stone-800">
+            <span>Total Payable</span>
+            <span id="cart-total" class="font-mono text-xl text-amber-400">₹0</span>
+          </div>
+
+          <button onclick="openCheckoutModal()" id="checkout-btn" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 via-emerald-700 to-amber-600 hover:from-emerald-700 hover:to-amber-700 text-white font-black text-sm shadow-xl flex items-center justify-center gap-2 transition active:scale-95">
+            <span>Proceed to WhatsApp Checkout</span> 📲
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Checkout Modal -->
+  <div id="checkout-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+    <div class="bg-stone-900 border border-amber-500/40 rounded-3xl max-w-lg w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+      <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-stone-400 hover:text-white text-lg font-bold">✕</button>
+      
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center text-2xl font-black">📲</div>
+        <div>
+          <h3 class="text-lg font-bold text-amber-300 font-royal">WhatsApp Order Dispatch</h3>
+          <p class="text-xs text-stone-400">Enter delivery details to send your order directly to Mateshwari Industries</p>
+        </div>
+      </div>
+
+      <form id="order-form" onsubmit="handlePlaceOrder(event)" class="space-y-3.5">
+        <div>
+          <label class="block text-xs font-bold text-amber-200 mb-1">Full Name / Business Name *</label>
+          <input type="text" id="cust-name" required placeholder="e.g. Ramesh Sharma / Mehandi Studio" class="w-full bg-stone-800 border border-amber-500/30 rounded-xl px-3.5 py-2 text-sm text-stone-100 focus:outline-none focus:ring-2 focus:ring-amber-500">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-amber-200 mb-1">WhatsApp Mobile Number *</label>
+          <input type="tel" id="cust-phone" required placeholder="e.g. 9876543210" class="w-full bg-stone-800 border border-amber-500/30 rounded-xl px-3.5 py-2 text-sm text-stone-100 focus:outline-none focus:ring-2 focus:ring-amber-500">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-amber-200 mb-1">Complete Delivery Address (City, Pincode, State) *</label>
+          <textarea id="cust-address" required rows="2" placeholder="House/Shop No., Street, City, Pincode" class="w-full bg-stone-800 border border-amber-500/30 rounded-xl px-3.5 py-2 text-sm text-stone-100 focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-amber-200 mb-1">Special Order Note (Optional)</label>
+          <input type="text" id="cust-notes" placeholder="e.g. Need triple-sifted powder for wedding bridal cones" class="w-full bg-stone-800 border border-amber-500/30 rounded-xl px-3.5 py-2 text-sm text-stone-100 focus:outline-none focus:ring-2 focus:ring-amber-500">
+        </div>
+
+        <div class="p-3 rounded-2xl bg-stone-950 border border-emerald-600/30 text-xs space-y-1">
+          <div class="flex justify-between text-stone-300">
+            <span>Items Total:</span>
+            <span id="checkout-summary-total" class="font-bold text-amber-300">₹0</span>
+          </div>
+          <p class="text-[11px] text-emerald-400 font-medium">✓ Official Mateshwari WhatsApp invoice will open directly on your phone/PC.</p>
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-black text-sm shadow-xl flex items-center justify-center gap-2">
+          <span>Send Order on WhatsApp</span> 📲
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Tracking Modal -->
+  <div id="track-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+    <div class="bg-stone-900 border border-amber-500/40 rounded-3xl max-w-md w-full p-6 shadow-2xl relative">
+      <button onclick="closeTrackOrderModal()" class="absolute top-4 right-4 text-stone-400 hover:text-white text-lg font-bold">✕</button>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-2xl">📦</span>
+        <div>
+          <h3 class="text-base font-bold text-amber-300 font-royal">Track Your Henna Order</h3>
+          <p class="text-xs text-stone-400">View your recent orders and live status</p>
+        </div>
+      </div>
+
+      <div class="space-y-3" id="orders-list">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Seller Admin PIN Modal (Private Owner Only) -->
+  <div id="admin-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+    <div class="bg-stone-900 border border-amber-500/50 rounded-3xl max-w-md w-full p-6 shadow-2xl relative">
+      <button onclick="closeAdminModal()" class="absolute top-4 right-4 text-stone-400 hover:text-white text-lg font-bold">✕</button>
+      
+      <div class="text-center mb-5">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-br from-amber-400 to-yellow-600 text-stone-950 flex items-center justify-center text-2xl font-black mb-3 shadow-lg">
+          🔒
+        </div>
+        <span class="px-2.5 py-0.5 rounded-full bg-amber-400/20 text-amber-300 border border-amber-400/30 text-[10px] font-extrabold uppercase tracking-widest">
+          Restricted • Owner Only
+        </span>
+        <h3 class="text-xl font-black font-royal text-white mt-1">Seller Admin Login</h3>
+        <p class="text-xs text-stone-400 mt-1">Sirf Mateshwari Industries ke owner (Himesh Ji) ke liye access.</p>
+      </div>
+
+      <form id="admin-pin-form" onsubmit="handleAdminVerify(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-amber-200 mb-1 text-center">Enter 4-Digit Secret Master PIN</label>
+          <input 
+            type="password" 
+            id="admin-pin-input" 
+            maxlength="8" 
+            required 
+            placeholder="••••" 
+            class="w-full text-center tracking-[0.4em] font-mono text-2xl font-black py-3 rounded-2xl bg-stone-950 border-2 border-amber-500/40 focus:border-amber-400 text-amber-300 focus:outline-none"
+          >
+        </div>
+
+        <div id="pin-error" class="hidden text-center text-xs text-rose-400 font-bold">
+          ❌ Incorrect PIN! Access Denied.
+        </div>
+
+        <div class="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-[11px] text-amber-200 flex items-center justify-between">
+          <span>
+            🔑 Initial Master PIN: <strong style="color: #ffea00;" class="font-mono text-xs bg-amber-400/20 px-1.5 py-0.5 rounded font-black text-[#ffea00]" id="master-pin-display">8899</strong>
+          </span>
+          <button type="button" onclick="autoFillPin()" class="text-emerald-400 font-bold underline hover:text-emerald-300">Auto-Fill</button>
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-amber-500 via-yellow-600 to-emerald-700 text-stone-950 font-black text-sm shadow-xl active:scale-95 transition">
+          Unlock Seller Dashboard 🔓
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Seller Admin Dashboard Modal -->
+  <div id="admin-dashboard-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md">
+    <div class="bg-stone-900 border border-amber-500/60 rounded-3xl max-w-2xl w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+      <button onclick="closeAdminDashboard()" class="absolute top-4 right-4 text-stone-400 hover:text-white text-lg font-bold">✕</button>
+
+      <div class="flex items-center justify-between pb-4 border-b border-stone-800 mb-6">
+        <div>
+          <h3 class="text-xl font-black font-royal text-amber-400">👑 Seller Admin Panel</h3>
+          <p class="text-xs text-emerald-400">Welcome, Himesh Gehlot Ji (Owner)</p>
+        </div>
+        <button onclick="logoutAdmin()" class="px-3 py-1.5 rounded-xl bg-rose-600/20 text-rose-300 border border-rose-500/30 text-xs font-bold">
+          Log Out
+        </button>
+      </div>
+
+      <!-- Settings Section -->
+      <div class="bg-stone-950 p-4 rounded-2xl border border-amber-500/30 mb-6 space-y-3">
+        <h4 class="text-xs font-bold text-amber-300 uppercase tracking-wider">Store WhatsApp & Secret Settings</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="text-[11px] text-stone-400 block mb-1">Seller WhatsApp Number</label>
+            <input type="text" id="admin-setting-whatsapp" class="w-full bg-stone-900 border border-stone-700 rounded-lg px-2.5 py-1.5 text-xs text-white">
+          </div>
+          <div>
+            <label class="text-[11px] text-stone-400 block mb-1">New Admin Secret PIN</label>
+            <input type="text" id="admin-setting-pin" class="w-full bg-stone-900 border border-stone-700 rounded-lg px-2.5 py-1.5 text-xs text-white" placeholder="Change 8899 to new PIN">
+          </div>
+        </div>
+        <button onclick="saveAdminSettings()" class="px-4 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs">
+          Save Settings
+        </button>
+      </div>
+
+      <!-- Add New Product Section -->
+      <div class="bg-stone-950 p-4 rounded-2xl border border-amber-500/30 mb-6 space-y-3">
+        <h4 class="text-xs font-bold text-amber-300 uppercase tracking-wider">➕ Add New Henna / Product</h4>
+        <form onsubmit="handleAddNewProduct(event)" class="space-y-3">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="text-[11px] text-stone-400 block mb-1">Product Name *</label>
+              <input type="text" id="new-prod-name" required placeholder="e.g. Sojat Bridal Cone" class="w-full bg-stone-900 border border-stone-700 rounded-lg px-2.5 py-1.5 text-xs text-white">
+            </div>
+            <div>
+              <label class="text-[11px] text-stone-400 block mb-1">Category *</label>
+              <select id="new-prod-cat" class="w-full bg-stone-900 border border-stone-700 rounded-lg px-2.5 py-1.5 text-xs text-white">
+                <option value="Henna Powder">Henna Powder</option>
+                <option value="Henna Essential Oils">Henna Essential Oils</option>
+                <option value="Herbal Henna">Herbal Henna</option>
+                <option value="Mehandi Cones">Mehandi Cones</option>
+                <option value="Bulk & Wholesale">Bulk & Wholesale</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-[11px] text-stone-400 block mb-1">Selling Price (₹) *</label>
+              <input type="number" id="new-prod-price" required placeholder="e.g. 350" class="w-full bg-stone-900 border border-stone-700 rounded-lg px-2.5 py-1.5 text-xs text-white">
+            </div>
+            <div>
+              <label class="text-[11px] text-stone-400 block mb-1">Original Price (₹)</label>
+              <input type="number" id="new-prod-orig-price" placeholder="e.g. 450" class="w-full bg-stone-900 border border-stone-700 rounded-lg px-2.5 py-1.5 text-xs text-white">
+            </div>
+            <div>
+              <label class="text-[11px] text-stone-400 block mb-1">Pack Weight / Size *</label>
+              <input type="text" id="new-prod-weight" required placeholder="e.g. 1 kg / Pack of 12" class="w-full bg-stone-900 border border-stone-700 rounded-lg px-2.5 py-1.5 text-xs text-white">
+            </div>
+            <div>
+              <label class="text-[11px] text-stone-400 block mb-1">Badge</label>
+              <input type="text" id="new-prod-badge" placeholder="e.g. New Batch / Best Seller" class="w-full bg-stone-900 border border-stone-700 rounded-lg px-2.5 py-1.5 text-xs text-white">
+            </div>
+          </div>
+          <div>
+            <label class="text-[11px] text-stone-400 block mb-1">Image URL (Direct link)</label>
+            <input type="url" id="new-prod-img" placeholder="https://images.unsplash.com/..." class="w-full bg-stone-900 border border-stone-700 rounded-lg px-2.5 py-1.5 text-xs text-white">
+          </div>
+          <button type="submit" class="w-full py-2 rounded-xl bg-amber-500 hover:bg-amber-600 text-stone-950 font-black text-xs">
+            Add Product to Catalog
+          </button>
+        </form>
+      </div>
+
+      <!-- Manage Current Products List -->
+      <div>
+        <h4 class="text-xs font-bold text-amber-300 uppercase tracking-wider mb-3">Live Products in Store</h4>
+        <div class="space-y-2 max-h-60 overflow-y-auto" id="admin-products-list">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Wholesale Modal -->
+  <div id="wholesale-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+    <div class="bg-stone-900 border border-amber-500/50 rounded-3xl max-w-lg w-full p-6 shadow-2xl relative">
+      <button onclick="closeWholesaleModal()" class="absolute top-4 right-4 text-stone-400 hover:text-white text-lg font-bold">✕</button>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-2xl">🏭</span>
+        <div>
+          <h3 class="text-lg font-bold text-amber-300 font-royal">Direct Wholesale & Export Inquiries</h3>
+          <p class="text-xs text-stone-400">Order 50kg, 100kg, 1000kg bags directly from factory</p>
+        </div>
+      </div>
+      <p class="text-xs text-stone-300 leading-relaxed mb-4">
+        For mehandi cone manufacturers, beauty salons, export distributors, or organic cosmetic brands requiring custom lab testing and COA certification.
+      </p>
+      <div class="p-3 bg-stone-950 border border-amber-500/20 rounded-2xl text-xs space-y-1 mb-4">
+        <p class="text-amber-300 font-bold">Direct Factory Contacts:</p>
+        <p class="text-stone-300">📞 Phone / WhatsApp: <strong class="text-emerald-400" id="wholesale-phone-display">+91 98765 43210</strong></p>
+        <p class="text-stone-300">🏢 Factory: Industrial Area, Sojat City, Rajasthan</p>
+        <p class="text-stone-300">✉ Email: himeshgehlot10@gmail.com</p>
+      </div>
+      <button onclick="openDirectWhatsApp('Hello Mateshwari Industries, I need bulk wholesale quote for Sojat Henna.')" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-700 text-white font-black text-xs flex items-center justify-center gap-2">
+        Chat on WhatsApp with Owner 📲
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden bg-gradient-to-r from-amber-600 to-emerald-800 text-white px-5 py-3 rounded-2xl shadow-2xl font-bold text-xs flex items-center gap-2 animate-bounce">
+    <span id="toast-text">Action successful</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-auto bg-stone-950 border-t border-amber-500/30 text-stone-400 text-xs py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div>
+        <h4 class="text-amber-300 font-royal font-bold text-base uppercase mb-2">Mateshwari Industries</h4>
+        <p class="text-[11px] leading-relaxed text-stone-400">
+          Premier manufacturer, processor & bulk exporter of 100% natural Sojat henna powder, henna dark eucalyptus oils, and Ayurvedic herbal cosmetics.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-amber-300 font-bold text-xs uppercase mb-2">Factory & Office</h4>
+        <p class="text-[11px] leading-relaxed text-stone-400">
+          Industrial Area, Sojat City, Pali District, Rajasthan - 306104<br>
+          Owner: <strong>Himesh Gehlot</strong><br>
+          WhatsApp: <span id="footer-whatsapp">+91 98765 43210</span>
+        </p>
+      </div>
+      <div>
+        <h4 class="text-amber-300 font-bold text-xs uppercase mb-2">Quick Navigation</h4>
+        <div class="flex flex-col gap-1 text-[11px]">
+          <button onclick="openWholesaleQuote()" class="text-left text-amber-400 hover:underline">Bulk Wholesale Ratecard</button>
+          <button onclick="openTrackOrderModal()" class="text-left text-amber-400 hover:underline">Check Placed Orders</button>
+          <button onclick="openAdminModal()" class="text-left text-amber-400 hover:underline">Seller Private Portal</button>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 mt-6 border-t border-stone-900 text-center text-[10px] text-stone-500">
+      © 2026 Mateshwari Industries. All Rights Reserved. Crafted with Rajasthan Royal Pride.
+    </div>
+  </footer>
+
+  <!-- Application Logic (LocalStorage + Cart + Filter + WhatsApp Generator + Admin) -->
+  <script>
+    // Initial Default Data
+    const INITIAL_PRODUCTS = [
+      {
+        id: "henna-1",
+        name: "Pure Sojat Body Art Grade Henna Powder (Triple Sifted)",
+        category: "Henna Powder",
+        price: 320,
+        originalPrice: 450,
+        weight: "1 kg",
+        image: "https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&w=600&q=80",
+        features: ["100% Pure Lawsonia Inermis", "Micro-fine cloth sifted", "Deep dark stain guaranteed"],
+        badge: "Best Seller"
+      },
+      {
+        id: "henna-2",
+        name: "Pure Nilgiri Eucalyptus Henna Essential Oil (High Cineole)",
+        category: "Henna Essential Oils",
+        price: 380,
+        originalPrice: 520,
+        weight: "250 ml (Glass Bottle)",
+        image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=600&q=80",
+        features: ["Steam distilled natural oil", "Dark mahogany oxidation", "Bridal artist favorite"],
+        badge: "Artist Choice"
+      },
+      {
+        id: "henna-3",
+        name: "Herbal Hair Henna Powder (9 Ayurvedic Herbs Blend)",
+        category: "Herbal Henna",
+        price: 240,
+        originalPrice: 320,
+        weight: "500 g",
+        image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80",
+        features: ["With Amla, Reetha, Shikakai", "Natural hair nourishment", "Zero chemicals or PPD"],
+        badge: "100% Herbal"
+      },
+      {
+        id: "henna-4",
+        name: "Ready-to-Use Premium Sojat Bridal Mehandi Cones (Box of 12)",
+        category: "Mehandi Cones",
+        price: 300,
+        originalPrice: 420,
+        weight: "Box (12 Cones)",
+        image: "https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&w=600&q=80",
+        features: ["Smooth needle pin tip", "Freshly packed batch", "Instant dark maroon stain"],
+        badge: "Fresh Batch"
+      },
+      {
+        id: "henna-5",
+        name: "Sojat Raw Henna Leaves (Export Grade Whole Dried Leaves)",
+        category: "Bulk & Wholesale",
+        price: 180,
+        originalPrice: 240,
+        weight: "1 kg Bag",
+        image: "https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&w=600&q=80",
+        features: ["Handpicked Sojat farm harvest", "Cleaned & graded leaves", "High Lawsonia content"],
+        badge: "Factory Direct"
+      },
+      {
+        id: "henna-6",
+        name: "Tea Tree & Clove Darkening Mehandi Oil Blend",
+        category: "Henna Essential Oils",
+        price: 290,
+        originalPrice: 390,
+        weight: "100 ml",
+        image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=600&q=80",
+        features: ["Therapeutic organic blend", "Deepens henna stain by 2x", "Skin friendly formula"],
+        badge: "Dark Stain"
+      }
+    ];
+
+    const DEFAULT_NOTIFICATIONS = [
+      {
+        id: "notif-1",
+        title: "🌿 Fresh Sojat Crop 2026 Batch Ready!",
+        message: "New harvest Lawsonia Inermis powder triple cloth sifted now available with extra 10% wholesale discount.",
+        date: "Today"
+      },
+      {
+        id: "notif-2",
+        title: "🚚 Express WhatsApp Delivery",
+        message: "Orders placed before 2 PM dispatched same day across India with real-time tracking.",
+        date: "Daily Update"
+      }
+    ];
+
+    // LocalStorage State Management
+    let products = JSON.parse(localStorage.getItem('mi_products')) || INITIAL_PRODUCTS;
+    let cart = JSON.parse(localStorage.getItem('mi_cart')) || [];
+    let orders = JSON.parse(localStorage.getItem('mi_orders')) || [];
+    let adminPin = localStorage.getItem('mi_admin_pin') || "8899";
+    let sellerWhatsApp = localStorage.getItem('mi_seller_whatsapp') || "+91 93529 17094";
+
+    let selectedCategory = "All";
+    let searchQuery = "";
+    let sortBy = "featured";
+
+    const CATEGORIES = ["All", "Henna Powder", "Henna Essential Oils", "Herbal Henna", "Mehandi Cones", "Bulk & Wholesale"];
+
+    function saveState() {
+      localStorage.setItem('mi_products', JSON.stringify(products));
+      localStorage.setItem('mi_cart', JSON.stringify(cart));
+      localStorage.setItem('mi_orders', JSON.stringify(orders));
+      localStorage.setItem('mi_admin_pin', adminPin);
+      localStorage.setItem('mi_seller_whatsapp', sellerWhatsApp);
+    }
+
+    // UI Toast
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const text = document.getElementById('toast-text');
+      text.innerText = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3000);
+    }
+
+    // Render Categories
+    function renderCategories() {
+      const container = document.getElementById('categories-container');
+      container.innerHTML = CATEGORIES.map(cat => {
+        const isActive = cat === selectedCategory;
+        const activeClass = isActive 
+          ? "bg-gradient-to-r from-amber-500 to-yellow-600 text-stone-950 font-black shadow-md"
+          : "bg-stone-800/80 hover:bg-stone-700 text-stone-300 font-semibold border border-amber-500/20";
+        return `<button onclick="selectCategory('${cat}')" class="whitespace-nowrap px-4 py-2 rounded-xl text-xs transition ${activeClass}">${cat}</button>`;
+      }).join('');
+    }
+
+    function selectCategory(cat) {
+      selectedCategory = cat;
+      renderCategories();
+      renderProducts();
+    }
+
+    function handleSearch(val) {
+      searchQuery = val.toLowerCase().trim();
+      renderProducts();
+    }
+
+    function handleSort(val) {
+      sortBy = val;
+      renderProducts();
+    }
+
+    function resetFilters() {
+      selectedCategory = "All";
+      searchQuery = "";
+      sortBy = "featured";
+      const sInput = document.getElementById('search-input');
+      const msInput = document.getElementById('mobile-search-input');
+      if (sInput) sInput.value = "";
+      if (msInput) msInput.value = "";
+      renderCategories();
+      renderProducts();
+    }
+
+    // Render Products Grid
+    function renderProducts() {
+      const grid = document.getElementById('products-grid');
+      const emptyState = document.getElementById('empty-state');
+
+      let filtered = products.filter(p => {
+        const matchesCategory = selectedCategory === "All" || p.category === selectedCategory;
+        const matchesSearch = !searchQuery || 
+          p.name.toLowerCase().includes(searchQuery) || 
+          p.category.toLowerCase().includes(searchQuery) ||
+          (p.features && p.features.some(f => f.toLowerCase().includes(searchQuery)));
+        return matchesCategory && matchesSearch;
+      });
+
+      if (sortBy === 'price-low') {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (sortBy === 'price-high') {
+        filtered.sort((a, b) => b.price - a.price);
+      } else if (sortBy === 'discount') {
+        filtered.sort((a, b) => ((b.originalPrice || b.price) - b.price) - ((a.originalPrice || a.price) - a.price));
+      }
+
+      if (filtered.length === 0) {
+        grid.innerHTML = "";
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+      grid.innerHTML = filtered.map(prod => {
+        const discount = prod.originalPrice ? Math.round(((prod.originalPrice - prod.price) / prod.originalPrice) * 100) : 0;
+        return `
+          <div class="bg-stone-900 border border-amber-500/30 rounded-3xl overflow-hidden hover:border-amber-400/80 transition-all duration-300 flex flex-col group hover:-translate-y-1 shadow-xl">
+            <!-- Product Image -->
+            <div class="relative h-48 bg-stone-950 overflow-hidden">
+              <img src="${prod.image}" alt="${prod.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              ${prod.badge ? `<span class="absolute top-3 left-3 bg-gradient-to-r from-amber-500 to-yellow-600 text-stone-950 text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full shadow-md">${prod.badge}</span>` : ''}
+              ${discount > 0 ? `<span class="absolute top-3 right-3 bg-rose-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow">${discount}% OFF</span>` : ''}
+              <div class="absolute bottom-2 right-2 bg-stone-950/80 backdrop-blur-sm text-amber-300 text-[11px] font-bold px-2 py-0.5 rounded-md border border-amber-500/30">
+                ${prod.weight}
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <span class="text-[10px] text-emerald-400 font-extrabold uppercase tracking-wider">${prod.category}</span>
+                <h4 class="text-sm font-bold text-stone-100 group-hover:text-amber-300 transition-colors mt-1 line-clamp-2">${prod.name}</h4>
+                <ul class="mt-2.5 space-y-1 text-[11px] text-stone-400">
+                  ${(prod.features || []).slice(0, 2).map(f => `<li class="flex items-center gap-1.5"><span class="text-emerald-400 font-bold">✓</span> <span class="truncate">${f}</span></li>`).join('')}
+                </ul>
+              </div>
+
+              <div class="pt-4 mt-4 border-t border-stone-800 flex items-center justify-between">
+                <div>
+                  <div class="flex items-baseline gap-1.5">
+                    <span class="text-xl font-black text-amber-400 font-mono">₹${prod.price}</span>
+                    ${prod.originalPrice ? `<span class="text-xs text-stone-500 line-through">₹${prod.originalPrice}</span>` : ''}
+                  </div>
+                  <span class="text-[10px] text-emerald-400 font-medium">In Stock • Fast Dispatch</span>
+                </div>
+
+                <button onclick="addToCart('${prod.id}')" class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-amber-500 via-yellow-600 to-emerald-700 hover:from-amber-600 hover:to-emerald-800 text-stone-950 font-black text-xs shadow-md transition transform active:scale-95 flex items-center gap-1.5">
+                  <span>Add</span> 🛒
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Cart Management
+    function addToCart(productId) {
+      const prod = products.find(p => p.id === productId);
+      if (!prod) return;
+
+      const existing = cart.find(item => item.product.id === productId);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ product: prod, quantity: 1 });
+      }
+
+      saveState();
+      updateCartBadge();
+      showToast(`🛒 "${prod.name}" added to cart!`);
+    }
+
+    function updateCartBadge() {
+      const totalCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+      const counter = document.getElementById('cart-counter');
+      if (counter) counter.innerText = totalCount;
+    }
+
+    function updateQuantity(productId, delta) {
+      const item = cart.find(i => i.product.id === productId);
+      if (!item) return;
+
+      item.quantity += delta;
+      if (item.quantity <= 0) {
+        cart = cart.filter(i => i.product.id !== productId);
+      }
+      saveState();
+      updateCartBadge();
+      renderCartDrawer();
+    }
+
+    function openCartDrawer() {
+      renderCartDrawer();
+      document.getElementById('cart-drawer').classList.remove('hidden');
+    }
+
+    function closeCartDrawer() {
+      document.getElementById('cart-drawer').classList.add('hidden');
+    }
+
+    function renderCartDrawer() {
+      const container = document.getElementById('cart-items-container');
+      const subtotalEl = document.getElementById('cart-subtotal');
+      const totalEl = document.getElementById('cart-total');
+      const checkoutBtn = document.getElementById('checkout-btn');
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12">
+            <span class="text-4xl">🛒</span>
+            <h4 class="text-sm font-bold text-amber-300 mt-2">Your Cart is Empty</h4>
+            <p class="text-xs text-stone-400 mt-1">Add pure Sojat Henna or oils to order!</p>
+          </div>
+        `;
+        subtotalEl.innerText = "₹0";
+        totalEl.innerText = "₹0";
+        checkoutBtn.disabled = true;
+        checkoutBtn.classList.add('opacity-50');
+        return;
+      }
+
+      checkoutBtn.disabled = false;
+      checkoutBtn.classList.remove('opacity-50');
+
+      const subtotal = cart.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
+      const delivery = subtotal >= 799 ? 0 : 50;
+      const total = subtotal + delivery;
+
+      subtotalEl.innerText = `₹${subtotal}`;
+      totalEl.innerText = `₹${total}`;
+
+      container.innerHTML = cart.map(item => `
+        <div class="flex items-center gap-3 bg-stone-950 p-3 rounded-2xl border border-stone-800">
+          <img src="${item.product.image}" class="w-14 h-14 rounded-xl object-cover">
+          <div class="flex-1">
+            <h5 class="text-xs font-bold text-stone-100 line-clamp-1">${item.product.name}</h5>
+            <span class="text-[11px] text-amber-400 font-mono font-bold">₹${item.product.price} × ${item.quantity} = ₹${item.product.price * item.quantity}</span>
+          </div>
+          <div class="flex items-center gap-1.5 bg-stone-900 border border-stone-700 rounded-lg p-1">
+            <button onclick="updateQuantity('${item.product.id}', -1)" class="w-6 h-6 flex items-center justify-center text-xs font-bold text-stone-400 hover:text-white">-</button>
+            <span class="text-xs font-mono font-bold px-1">${item.quantity}</span>
+            <button onclick="updateQuantity('${item.product.id}', 1)" class="w-6 h-6 flex items-center justify-center text-xs font-bold text-stone-400 hover:text-white">+</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Checkout Flow
+    function openCheckoutModal() {
+      if (cart.length === 0) return;
+      closeCartDrawer();
+      const subtotal = cart.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
+      const delivery = subtotal >= 799 ? 0 : 50;
+      const total = subtotal + delivery;
+      document.getElementById('checkout-summary-total').innerText = `₹${total} (incl. delivery ₹${delivery})`;
+      document.getElementById('checkout-modal').classList.remove('hidden');
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkout-modal').classList.add('hidden');
+    }
+
+    function handlePlaceOrder(e) {
+      e.preventDefault();
+      const name = document.getElementById('cust-name').value.trim();
+      const phone = document.getElementById('cust-phone').value.trim();
+      const address = document.getElementById('cust-address').value.trim();
+      const notes = document.getElementById('cust-notes').value.trim();
+
+      const subtotal = cart.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
+      const delivery = subtotal >= 799 ? 0 : 50;
+      const total = subtotal + delivery;
+
+      const orderId = "MI-" + Math.floor(100000 + Math.random() * 900000);
+      const newOrder = {
+        id: orderId,
+        date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }),
+        customerName: name,
+        customerPhone: phone,
+        deliveryAddress: address,
+        notes: notes,
+        items: [...cart],
+        subtotal: subtotal,
+        delivery: delivery,
+        totalCost: total,
+        status: "Processing"
+      };
+
+      orders.unshift(newOrder);
+
+      // WhatsApp Message Formatting
+      let waMessage = `🌿 *MATESHWARI INDUSTRIES - NEW ORDER*\n`;
+      waMessage += `━━━━━━━━━━━━━━━━━━━━━\n`;
+      waMessage += `🧾 *Order ID:* ${orderId}\n`;
+      waMessage += `👤 *Customer:* ${name}\n`;
+      waMessage += `📞 *Phone:* ${phone}\n`;
+      waMessage += `📍 *Delivery Address:* ${address}\n`;
+      if (notes) waMessage += `📝 *Notes:* ${notes}\n`;
+      waMessage += `━━━━━━━━━━━━━━━━━━━━━\n`;
+      waMessage += `📦 *ITEMS ORDERED:*\n`;
+
+      cart.forEach((item, idx) => {
+        waMessage += `${idx + 1}. ${item.product.name} (${item.product.weight})\n`;
+        waMessage += `   Qty: ${item.quantity} × ₹${item.product.price} = ₹${item.product.price * item.quantity}\n`;
+      });
+
+      waMessage += `━━━━━━━━━━━━━━━━━━━━━\n`;
+      waMessage += `💰 *Subtotal:* ₹${subtotal}\n`;
+      waMessage += `🚚 *Delivery Fee:* ₹${delivery}\n`;
+      waMessage += `✨ *TOTAL PAYABLE:* ₹${total}\n\n`;
+      waMessage += `Please confirm my order and share invoice/UPI dispatch details. Thank you!`;
+
+      // Clear cart
+      cart = [];
+      saveState();
+      updateCartBadge();
+      closeCheckoutModal();
+
+      showToast(`🎉 Order ${orderId} created! Opening WhatsApp...`);
+
+      // Open WhatsApp
+      const cleanPhone = sellerWhatsApp.replace(/[^0-9]/g, '');
+      const waUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(waMessage)}`;
+      window.open(waUrl, '_blank');
+    }
+
+    // Direct WhatsApp helper
+    function openDirectWhatsApp(customText) {
+      const cleanPhone = sellerWhatsApp.replace(/[^0-9]/g, '');
+      const waUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(customText)}`;
+      window.open(waUrl, '_blank');
+    }
+
+    // Track Orders Modal
+    function openTrackOrderModal() {
+      const modal = document.getElementById('track-modal');
+      const list = document.getElementById('orders-list');
+
+      if (orders.length === 0) {
+        list.innerHTML = `
+          <div class="text-center py-8">
+            <p class="text-xs text-stone-400">No orders placed on this device yet.</p>
+          </div>
+        `;
+      } else {
+        list.innerHTML = orders.map(ord => `
+          <div class="p-3 bg-stone-950 rounded-2xl border border-stone-800 space-y-1.5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-black text-amber-400">${ord.id}</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-300">${ord.status}</span>
+            </div>
+            <p class="text-[11px] text-stone-400">${ord.date}</p>
+            <div class="text-xs text-stone-300 font-medium">${ord.items.length} items • Total: ₹${ord.totalCost}</div>
+          </div>
+        `).join('');
+      }
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeTrackOrderModal() {
+      document.getElementById('track-modal').classList.add('hidden');
+    }
+
+    // Wholesale Modal
+    function openWholesaleQuote() {
+      document.getElementById('wholesale-modal').classList.remove('hidden');
+    }
+
+    function closeWholesaleModal() {
+      document.getElementById('wholesale-modal').classList.add('hidden');
+    }
+
+    // Notifications Modal
+    function openNotificationModal() {
+      const list = document.getElementById('notifications-list');
+      list.innerHTML = DEFAULT_NOTIFICATIONS.map(n => `
+        <div class="p-3 bg-stone-950 rounded-2xl border border-stone-800 space-y-1">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-amber-300">${n.title}</span>
+            <span class="text-[10px] text-stone-500">${n.date}</span>
+          </div>
+          <p class="text-xs text-stone-300">${n.message}</p>
+        </div>
+      `).join('');
+      document.getElementById('notification-modal').classList.remove('hidden');
+    }
+
+    function closeNotificationModal() {
+      document.getElementById('notification-modal').classList.add('hidden');
+    }
+
+    // Admin Authentication (Private Owner Only)
+    function openAdminModal() {
+      document.getElementById('master-pin-display').innerText = adminPin;
+      document.getElementById('pin-error').classList.add('hidden');
+      document.getElementById('admin-pin-input').value = "";
+      document.getElementById('admin-modal').classList.remove('hidden');
+    }
+
+    function closeAdminModal() {
+      document.getElementById('admin-modal').classList.add('hidden');
+    }
+
+    function autoFillPin() {
+      document.getElementById('admin-pin-input').value = adminPin;
+    }
+
+    function handleAdminVerify(e) {
+      e.preventDefault();
+      const entered = document.getElementById('admin-pin-input').value.trim();
+      if (entered === adminPin) {
+        closeAdminModal();
+        openAdminDashboard();
+        showToast("🔓 Owner Access Verified! Welcome Himesh Ji.");
+      } else {
+        document.getElementById('pin-error').classList.remove('hidden');
+      }
+    }
+
+    function openAdminDashboard() {
+      document.getElementById('admin-setting-whatsapp').value = sellerWhatsApp;
+      document.getElementById('admin-setting-pin').value = adminPin;
+      renderAdminProducts();
+      document.getElementById('admin-dashboard-modal').classList.remove('hidden');
+    }
+
+    function closeAdminDashboard() {
+      document.getElementById('admin-dashboard-modal').classList.add('hidden');
+    }
+
+    function logoutAdmin() {
+      closeAdminDashboard();
+      showToast("Logged out from Seller Admin.");
+    }
+
+    function saveAdminSettings() {
+      const newPhone = document.getElementById('admin-setting-whatsapp').value.trim();
+      const newPin = document.getElementById('admin-setting-pin').value.trim();
+
+      if (newPhone) sellerWhatsApp = newPhone;
+      if (newPin) adminPin = newPin;
+
+      saveState();
+      updateStoreContactUI();
+      showToast("Store settings & PIN updated successfully!");
+    }
+
+    function renderAdminProducts() {
+      const list = document.getElementById('admin-products-list');
+      list.innerHTML = products.map(p => `
+        <div class="flex items-center justify-between p-2.5 bg-stone-900 rounded-xl border border-stone-800">
+          <div class="flex items-center gap-2">
+            <img src="${p.image}" class="w-8 h-8 rounded-lg object-cover">
+            <div>
+              <p class="text-xs font-bold text-white line-clamp-1">${p.name}</p>
+              <p class="text-[10px] text-amber-400">₹${p.price} • ${p.category}</p>
+            </div>
+          </div>
+          <button onclick="deleteProduct('${p.id}')" class="text-xs text-rose-400 hover:text-rose-300 px-2 py-1 bg-rose-950/30 rounded border border-rose-800/30">
+            Delete
+          </button>
+        </div>
+      `).join('');
+    }
+
+    function handleAddNewProduct(e) {
+      e.preventDefault();
+      const name = document.getElementById('new-prod-name').value.trim();
+      const cat = document.getElementById('new-prod-cat').value;
+      const price = parseFloat(document.getElementById('new-prod-price').value);
+      const origPrice = parseFloat(document.getElementById('new-prod-orig-price').value) || (price + 100);
+      const weight = document.getElementById('new-prod-weight').value.trim();
+      const badge = document.getElementById('new-prod-badge').value.trim() || "Fresh Harvest";
+      const img = document.getElementById('new-prod-img').value.trim() || "https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&w=600&q=80";
+
+      const newP = {
+        id: "prod-" + Date.now(),
+        name: name,
+        category: cat,
+        price: price,
+        originalPrice: origPrice,
+        weight: weight,
+        image: img,
+        badge: badge,
+        features: ["100% Authentic Sojat Quality", "Direct Factory Packaging"]
+      };
+
+      products.unshift(newP);
+      saveState();
+      renderAdminProducts();
+      renderProducts();
+      e.target.reset();
+      showToast("✅ Product added to catalog!");
+    }
+
+    function deleteProduct(id) {
+      if (!confirm("Are you sure you want to delete this product?")) return;
+      products = products.filter(p => p.id !== id);
+      saveState();
+      renderAdminProducts();
+      renderProducts();
+      showToast("Product removed.");
+    }
+
+    function updateStoreContactUI() {
+      const banner = document.getElementById('announcement-banner');
+      const footerWA = document.getElementById('footer-whatsapp');
+      const wsPhone = document.getElementById('wholesale-phone-display');
+      if (footerWA) footerWA.innerText = sellerWhatsApp;
+      if (wsPhone) wsPhone.innerText = sellerWhatsApp;
+      if (banner) banner.innerText = `🌿 100% Organic Sojat Henna & Essential Oils • Direct Factory Dispatch • Call / WhatsApp: ${sellerWhatsApp}`;
+    }
+
+    // Initialize Page
+    window.addEventListener('DOMContentLoaded', () => {
+      renderCategories();
+      renderProducts();
+      updateCartBadge();
+      updateStoreContactUI();
+    });
+  </script>
+</body>
+</html>
