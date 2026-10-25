@@ -133,17 +133,9 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({
                   <span>{errorMsg}</span>
                 </div>
               ) : (
-                <div className="mt-2 p-2.5 rounded-xl bg-amber-50 border border-amber-200 text-[11px] text-amber-900 flex items-center justify-between">
-                  <span>
-                    🔑 Initial Default Master PIN: <strong style={{ color: '#ffea00' }} className="font-mono text-xs bg-amber-200/80 px-1.5 py-0.5 rounded font-black text-[#ffea00]">{expectedPin}</strong>
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => setPin(expectedPin)}
-                    className="text-[10px] font-bold text-emerald-800 underline hover:text-emerald-950"
-                  >
-                    Auto-Fill
-                  </button>
+                <div className="mt-2 p-2 rounded-xl bg-stone-50 border border-stone-200 text-[11px] text-stone-600 flex items-center gap-1.5">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                  <span>Confidential Owner Access • PIN is strictly private</span>
                 </div>
               )}
             </div>
